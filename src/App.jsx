@@ -1,8 +1,8 @@
 import "./App.css";
 
-import Sidebar from "./components/Sidebar";
+import Sidebar from "./components/Sidebar.jsx";
 
-import Main from "./components/Main";
+import Main from "./components/Main.jsx";
 
 import { useEffect, useState } from "react";
 
@@ -17,8 +17,9 @@ function App() {
 
   useEffect(() => {
     //ローカルストレージをノートに保存する
-
-    setActiveNotes(notes[0].id);
+    if (notes.length > 0) {
+      setActiveNotes(notes[0].id);
+    }
   }, []);
 
   useEffect(() => {
